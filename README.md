@@ -9,7 +9,6 @@ Prototipo de videojuego 3D en vista lateral (2.5D) desarrollado en Unity 6 con s
 * **Project Design Doc [WORD].docx**: Documento de diseño formal en inglés (plantilla oficial del curso, Autor: Julian Diaz).
 * **Project Design Doc [WORD]_ES.docx**: Documento de diseño formal en español (versión complementaria, Autor: Julian Diaz).
 * **CubeAdventure/**: Carpeta del proyecto en Unity 6 (versión 6000.6.7f1).
-* **PLAN_DE_DESARROLLO.txt**: Registro cronológico de desarrollo y validaciones de compilación.
 
 ---
 

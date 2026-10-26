@@ -69,6 +69,8 @@ crashlytics-build.properties
 # Temporary cache files
 *.tmp
 temp_test.dll
+PLAN_DE_DESARROLLO.txt
+README_INSTRUCCIONES.md
 
 # OS generated
 .DS_Store
