@@ -1,14 +1,13 @@
 # Guía del Proyecto: Cube Adventure
 
-Prototipo de videojuego 3D en vista lateral (2.5D) desarrollado en Unity 6 con sus documentos de diseño en inglés y español.
+Prototipo de videojuego 3D en vista lateral (2.5D) desarrollado en Unity 6 (Autor: Julian Diaz).
 
 ---
 
-## 1. Archivos del proyecto
+## 1. Estructura del repositorio
 
-* **Project Design Doc [WORD].docx**: Documento de diseño formal en inglés (plantilla oficial del curso, Autor: Julian Diaz).
-* **Project Design Doc [WORD]_ES.docx**: Documento de diseño formal en español (versión complementaria, Autor: Julian Diaz).
-* **CubeAdventure/**: Carpeta del proyecto en Unity 6 (versión 6000.6.7f1).
+* **CubeAdventure/**: Carpeta del proyecto en Unity 6 (versión 6000.6.7f1) con código, escenas, materiales, físicas y audio.
+* *(Los documentos formales de diseño Project Design Doc se conservan en la entrega local).*
 
 ---
 

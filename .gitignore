@@ -72,6 +72,9 @@ temp_test.dll
 PLAN_DE_DESARROLLO.txt
 README_INSTRUCCIONES.md
 
+# Documents ignored for remote repo (kept locally)
+*.docx
+
 # OS generated
 .DS_Store
 Thumbs.db
