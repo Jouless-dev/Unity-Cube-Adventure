@@ -1,38 +1,49 @@
-# Guía del Proyecto: Cube Adventure
+# Cube Adventure
 
-Prototipo de videojuego 3D en vista lateral (2.5D) desarrollado en Unity 6 (Autor: Julian Diaz).
-
----
-
-## 1. Estructura del repositorio
-
-* **CubeAdventure/**: Carpeta del proyecto en Unity 6 (versión 6000.6.7f1) con código, escenas, materiales, físicas y audio.
-* *(Los documentos formales de diseño Project Design Doc se conservan en la entrega local).*
+Prototipo de plataformas 2.5D desarrollado en Unity 6 (versión 6000.6.8f1) utilizando Universal Render Pipeline (URP).  
+**Autor:** Julian Diaz
 
 ---
 
-## 2. Cómo abrir y cargar el nivel en Unity
+## Ejecución del Proyecto
 
-1. Abre **Unity Hub** y selecciona el proyecto **CubeAdventure** (versión Unity 6: 6000.6.7f1).
-2. Con Unity abierto, ve a la barra superior de menús y haz clic en:
-   **Cube Adventure > Build Complete Level Scene**
-   *(Este comando genera y guarda la escena en disco con el cubo rojo, el suelo, las monedas doradas, los cactus y la bandera de meta).*
-3. Haz clic en el botón **Play** (icono triangular en la parte superior central) para jugar.
+El proyecto se encuentra registrado en **Unity Hub** y la escena principal ya está compilada y guardada.
 
----
+1. Abre **Unity Hub**.
+2. Selecciona y abre el proyecto **CubeAdventure**.
+3. Presiona el botón **Play** en la barra superior para iniciar el juego directamente.
 
-## 3. Controles
-
-* **Moverse**: Teclas **A** y **D** (o flechas izquierda y derecha).
-* **Saltar**: **Barra espaciadora** (o tecla W / flecha arriba).
-  * *Pulsación corta*: Salto bajo y ágil.
-  * *Mantener presionado*: Salto a altura completa calibrada para superar el obstáculo.
-* **Reinicio rápido**: Tecla **R** (reinicia la partida al instante en cualquier momento).
+*(Nota: En caso de requerir reconstruir la escena desde cero, se puede ejecutar el comando de menú `Cube Adventure > Build Complete Level Scene`).*
 
 ---
 
-## 4. Objetivo y reglas
+## Controles
 
-1. **Recoger 5 monedas doradas**: Avanza por el nivel recogiendo las monedas giratorias. El contador superior registrará tu avance (`COIN x 00 / 05`).
-2. **Esquivar los cactus (Reinicio estilo Geometry Dash)**: Salta los cactus en el camino. La altura del salto está calibrada para superar exactamente el obstáculo al frente y aterrizar antes del siguiente. Si tocas un cactus o caes al vacío, reaparecerás en el punto de inicio, **se te quitan todas las monedas acumuladas (vuelven a 00 / 05) y reaparecen en el escenario**. Debes conseguir las 5 monedas en una sola carrera limpia.
-3. **Llegar a la bandera**: Al final del recorrido está el mástil de la bandera. Si llegas con las 5 monedas recolectadas, sonará la fanfarria, se disparará la explosión de partículas verdes de celebración y verás la pantalla de victoria (**STAGE CLEAR!**). Si te faltan monedas, la pantalla te indicará cuántas necesitas para completar el nivel.
+| Acción | Entrada Primaria | Entrada Secundaria |
+| :--- | :--- | :--- |
+| **Movimiento Horizontal** | Teclas `A` / `D` | Flechas `←` / `→` |
+| **Salto Variable** | `Barra Espaciadora` | Tecla `W` / Flecha `↑` |
+| **Reinicio Rápido** | Tecla `R` | — |
+
+* **Salto corto:** Pulsación breve (corte de gravedad a 2.4x).
+* **Salto completo:** Mantener pulsado para alcanzar la altura calibrada de obstáculo.
+* **Tolerancia:** Incluye *Coyote Time* (0.15 s) y buffer de entrada (0.15 s).
+
+---
+
+## Mecánicas y Reglas de Juego
+
+* **Objetivo:** Recolectar las **5 monedas de oro** distribuidas a lo largo del recorrido y alcanzar el mástil de meta.
+* **Obstáculos y Penalización:** El contacto con cualquier cactus o la caída al vacío reinicia inmediatamente la posición del jugador al punto de partida, restablece el contador de monedas a `00 / 05` y reaparece todas las monedas recolectadas (reinicio limpio en una sola carrera).
+* **Condición de Victoria:** Tocar el mástil con las 5 monedas recolectadas activa la fanfarria de victoria, partículas de celebración y la pantalla de fin de nivel con opción de reinicio. Llegar al mástil con menos de 5 monedas desplegará un mensaje indicando la cantidad restante.
+
+---
+
+## Estructura del Repositorio
+
+* **`CubeAdventure/`**: Proyecto base de Unity (versión 6000.6.8f1).
+  * **`Assets/_Project/Scripts/`**: Controladores de jugador, cámara, coleccionables, obstáculos, interfaz, audio y editor.
+  * **`Assets/_Project/Audio/`**: Efectos de sonido (SFX) y música de fondo ambiental (BGM).
+  * **`Assets/_Project/Materials/`**: Materiales URP calibrados para elementos de juego.
+  * **`Assets/Scenes/SampleScene.unity`**: Escena principal completamente ensamblada.
+* **`Project Design.docx`**: Documento formal de diseño técnico y planificación del proyecto (en inglés).

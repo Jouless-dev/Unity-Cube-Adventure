@@ -23,6 +23,15 @@ namespace CubeAdventure.Editor
         [MenuItem("GameObject/Cube Adventure/Build Complete Level Scene", false, 10)]
         public static void BuildCompleteLevel()
         {
+            var activeScene = EditorSceneManager.GetActiveScene();
+            if (string.IsNullOrEmpty(activeScene.path))
+            {
+                if (System.IO.File.Exists("Assets/Scenes/SampleScene.unity"))
+                {
+                    activeScene = EditorSceneManager.OpenScene("Assets/Scenes/SampleScene.unity");
+                }
+            }
+
             // Ensure Tags exist
             EnsureTag("Player");
             EnsureTag("Coin");
@@ -207,8 +216,16 @@ namespace CubeAdventure.Editor
             CreateMarioUI(managersRoot, gm);
 
             // Save the scene permanently to disk
-            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
-            EditorSceneManager.SaveOpenScenes();
+            EditorSceneManager.MarkSceneDirty(activeScene);
+            if (string.IsNullOrEmpty(activeScene.path))
+            {
+                EditorSceneManager.SaveScene(activeScene, "Assets/Scenes/SampleScene.unity");
+            }
+            else
+            {
+                EditorSceneManager.SaveScene(activeScene);
+            }
+            AssetDatabase.SaveAssets();
             Debug.Log("<color=green><b>[Cube Adventure]</b> Complete level built and saved with red cube, all-cactus obstacles, and clean flagpole!</color>");
         }
 

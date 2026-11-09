@@ -35,6 +35,8 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+*.slnx
+.vscode/
 *.suo
 *.tmp
 *.user
@@ -72,8 +74,8 @@ temp_test.dll
 PLAN_DE_DESARROLLO.txt
 README_INSTRUCCIONES.md
 
-# Documents ignored for remote repo (kept locally)
-*.docx
+# Office temporary lock files
+~$*.docx
 
 # OS generated
 .DS_Store
